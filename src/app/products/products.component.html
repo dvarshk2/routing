@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <ul class="list-group">
+                <li class="list-group-item"
+                routerLinkActive="active"
+                [routerLink]="['/products',product.pId]"
+                [queryParams]="{allowEdit : product.pId === 1 ? '1' : '0'}"
+                *ngFor="let product of productsArr">
+                    {{product.pname}}
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm-8">
+            <!-- <app-edit-product></app-edit-product>
+            <hr>
+            <app-product></app-product> -->
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+<!-- <button class="btn btn-primary" (click)="onProducts()">GoToProduct-programatically</button> absolute -->

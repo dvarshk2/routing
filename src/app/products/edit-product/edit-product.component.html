@@ -1,0 +1,15 @@
+<p class="alert alert-danger" *ngIf="canNotEdit">You cannot Edit this product</p>
+<div class="form-group">
+    <label for="pname"><strong>Product Name</strong></label>
+    <input [disabled]="canNotEdit" type="text" [(ngModel)]="pName"  id="pname" class="form-control">
+</div>
+<div class="form-group">
+    <label for="pStatus"><strong>Product Status</strong></label>
+    <select [disabled]="canNotEdit" class="form-control" [(ngModel)]="pStatus" id="pStatus">
+        <option value="In Progress">In Progress</option>
+        <option value="Dispatched">Dispatched</option>
+        <option value="Delivered">Delivered</option>
+    </select>
+</div>
+<button [disabled]="canNotEdit" class="btn btn-info"
+(click)="onProductUpdate()">update</button>
